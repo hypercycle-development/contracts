@@ -35,7 +35,12 @@ contract MockERC721ReceiverTest is IERC721Receiver {
         variable = newVariable;
     }
 
-    function onERC721Received( address /*operator*/, address /*from*/, uint256 /*tokenId*/, bytes calldata /*data*/ ) public override returns (bytes4) {
+    function onERC721Received( 
+        address /*operator*/, 
+        address /*from*/, 
+        uint256 /*tokenId*/, 
+        bytes calldata /*data*/ 
+    ) public override returns (bytes4) {
         if (testCase == 0) {
             SwapContract.swap();
         } else {
